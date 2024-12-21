@@ -84,10 +84,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="login.html">Login</a>
                     </li>
-                    <!-- Search Link -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="searchResults.html">Search</a>
-                    </li>
                 </ul>
             </div>
         </div>
