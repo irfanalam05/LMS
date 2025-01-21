@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Library Management System - Home</title>
+    <title>Search Books - Library Management System</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
@@ -11,19 +11,19 @@
         /* Dark Background */
         body {
             background-color: #2c3e50;
-            color: #ecf0f1; /* Light text color */
+            color: #ecf0f1;
         }
 
         /* Card Styling */
         .card {
-            background-color: #34495e; /* Darker card background */
+            background-color: #34495e;
             border-radius: 15px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         /* Heading Styling */
         h4 {
-            color: #ecf0f1; /* Light text color for heading */
+            color: #ecf0f1;
             font-weight: bold;
         }
 
@@ -73,7 +73,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="bookingPage.html">Book a Book</a>
@@ -83,10 +83,6 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="login.html">Login</a>
-                    </li>
-                    <!-- Search Link -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="searchResults.html">Search</a>
                     </li>
                 </ul>
             </div>
@@ -98,26 +94,31 @@
         <div class="row justify-content-center align-items-center min-vh-100">
             <div class="col-12">
                 <div class="card p-4">
-                    <h4 class="text-center">Welcome to the Library Management System</h4>
-                    <p class="text-center">Explore and book your favorite books from our collection!</p>
+                    <h4 class="text-center">Search Books</h4>
+                    <p class="text-center">Choose a search option and enter the book name</p>
 
-                    <!-- Available Books Section -->
-                    <div class="mb-3">
-                        <h5>Available Books</h5>
-                        <ul>
-                            <li>The Great Gatsby</li>
-                            <li>To Kill a Mockingbird</li>
-                            <li>1984</li>
-                            <li>Moby Dick</li>
-                            <li>Pride and Prejudice</li>
-                        </ul>
-                    </div>
+                    <!-- Search Form -->
+                    <form action="searchResults.html" method="get">
+                        <div class="mb-3">
+                            <label for="searchType" class="form-label">Search By</label>
+                            <select class="form-select" id="searchType" name="searchType" required>
+                                <option value="">Select Search Type</option>
+                                <option value="title">Title</option>
+                                <option value="author">Author</option>
+                                <option value="genre">Genre</option>
+                                <option value="isbn">ISBN</option>
+                            </select>
+                        </div>
 
-                    <!-- Quick Actions -->
-                    <div class="d-flex justify-content-between">
-                        <a href="bookingPage.html" class="btn btn-primary">Book a Book</a>
-                        <a href="userProfile.html" class="btn btn-info">View Profile</a>
-                    </div>
+                        <div class="mb-3">
+                            <label for="searchQuery" class="form-label">Book Name</label>
+                            <input type="text" class="form-control" id="searchQuery" name="query" placeholder="Enter the book name" required />
+                        </div>
+
+                        <div class="d-flex justify-content-center">
+                            <button type="submit" class="btn btn-primary">Search</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
